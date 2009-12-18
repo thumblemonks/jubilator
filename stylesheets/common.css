@@ -1,0 +1,31 @@
+.rounded_corners {
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+}
+body { padding: 1em; }
+body .button {
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  display: inline-block;
+  padding: 0.7ex 1ex 1ex 1ex;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  line-height: 1;
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.25);
+  border: 1px solid;
+  border-color: rgba(0, 0, 0, 0.25) rgba(0, 0, 0, 0.25) rgba(0, 0, 0, 0.35);
+  position: relative;
+  cursor: pointer;
+}
+body .button:active { top: 1px; }
+body .button:hover { background-color: #666666; }
+body .button .small { font-size: 85%; }
+body .button .medium { font-size: 100%; }
+body .button .large { font-size: 1110%; }
+body .blue.button { background-color: #4499dd; }
+body .blue.button:hover { background-color: #3388cc; }
+body .green.button { background-color: #8ea401; }
+body .green.button:hover { background-color: #7d9300; }
