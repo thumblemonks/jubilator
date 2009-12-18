@@ -1,22 +1,19 @@
-/*
-  http://github.com/api/v2/json/...
-  repos/show/:user/:repo
-  tree/show/:user/:repo/:sha
-*/
-
-
-
 var app = $.sammy(function() {
 
   this.get('#/:user/:repo', function() {
     var user = this.params["user"];
     var repo = this.params["repo"];
-    $.github.repo(user, repo, function(data) {
-        console.log("hello %o", data);
-        $('#description').text(data.repository.description);
-        // $('#tree').text(data.repository.description);
-      }
-    );
+    var project = $.github(user, repo);
+    project.show_repo(function(data) { $('#description').text(data.repository.description); });
+    project.last_commit(function(data) {
+      $('#last_commit').text(data.tree);
+      project.tree(data.tree, function(data) {
+        $(data.tree).each(function(i) {
+          var leaf = this;
+          $("#tree").append(leaf.name);
+        })
+      })
+    });
   });
 
 });
