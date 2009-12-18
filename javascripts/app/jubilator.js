@@ -4,6 +4,7 @@ var app = $.sammy(function() {
   this.get(/^\#\/blob\/(.*)/, function() {
     project.open(this.params["splat"], function(data) {
       $("#contents").html(Mustache.to_html("{{raw}}", {raw: data.blob.data}));
+      prettyPrint();
     });
   });
 
