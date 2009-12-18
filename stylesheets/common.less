@@ -6,37 +6,52 @@
   -webkit-border-radius: 6px;
 }
 
-body {
+.button {
+  .rounded_corners;
+  display: inline-block;
+  padding: .70ex 1ex;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  line-height: 1;
+  -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+  border: 1px solid; 
+  border-color: rgba(0, 0, 0, 0.25) rgba(0, 0, 0, 0.25) rgba(0, 0, 0, 0.35);
+  position: relative;
+  cursor: pointer;
+
+  :active { top: 1px; }
+  :hover { background-color: #666; }
+
+  /*=button:sizes*/
+  .small { font-size: 85%; }
+  .medium { font-size:100%; }
+  .large { font-size:1110%; }
+}
+
+/*=button:colors*/
+.blue.button { background-color: @blue;
+  :hover { background-color: @blue - #111; } }
+.green.button { background-color: @green;
+  :hover { background-color: @green - #111; } }
+
+.clearfix { clear: both; }
+
+/* block sizes */
+.left { float: left; }
+.half { width: 50%; .left; }
+.quarter { width: 25%; .left; }
+.three_quarter { width: 75%; .left; }
+
+/* repo stuff */
+#repo_info {
   padding: 1em;
+}
 
-  .button {
-    .rounded_corners;
-    display: inline-block;
-    padding: .70ex 1ex 1ex 1ex;
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    line-height: 1;
-    -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
-    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
-    text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
-    border: 1px solid; 
-    border-color: rgba(0, 0, 0, 0.25) rgba(0, 0, 0, 0.25) rgba(0, 0, 0, 0.35);
-    position: relative;
-    cursor: pointer;
-
-    :active { top: 1px; }
-    :hover { background-color: #666; }
-
-    /*=button:sizes*/
-    .small { font-size: 85%; }
-    .medium { font-size:100%; }
-    .large { font-size:1110%; }
+#files {
+  #contents {
+    padding: 1em;
   }
-
-  /*=button:colors*/
-  .blue.button { background-color: @blue;
-    :hover { background-color: @blue - #111; } }
-  .green.button { background-color: @green;
-    :hover { background-color: @green - #111; } }
 }

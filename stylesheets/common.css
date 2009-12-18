@@ -2,12 +2,11 @@
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
 }
-body { padding: 1em; }
-body .button {
+.button {
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
   display: inline-block;
-  padding: 0.7ex 1ex 1ex 1ex;
+  padding: 0.7ex 1ex;
   color: #ffffff;
   text-decoration: none;
   font-weight: bold;
@@ -20,12 +19,28 @@ body .button {
   position: relative;
   cursor: pointer;
 }
-body .button:active { top: 1px; }
-body .button:hover { background-color: #666666; }
-body .button .small { font-size: 85%; }
-body .button .medium { font-size: 100%; }
-body .button .large { font-size: 1110%; }
-body .blue.button { background-color: #4499dd; }
-body .blue.button:hover { background-color: #3388cc; }
-body .green.button { background-color: #8ea401; }
-body .green.button:hover { background-color: #7d9300; }
+.button:active { top: 1px; }
+.button:hover { background-color: #666666; }
+.button .small { font-size: 85%; }
+.button .medium { font-size: 100%; }
+.button .large { font-size: 1110%; }
+.blue.button { background-color: #4499dd; }
+.blue.button:hover { background-color: #3388cc; }
+.green.button { background-color: #8ea401; }
+.green.button:hover { background-color: #7d9300; }
+.clearfix { clear: both; }
+.left { float: left; }
+.half {
+  width: 50%;
+  float: left;
+}
+.quarter {
+  width: 25%;
+  float: left;
+}
+.three_quarter {
+  width: 75%;
+  float: left;
+}
+#repo_info { padding: 1em; }
+#files #contents { padding: 1em; }
