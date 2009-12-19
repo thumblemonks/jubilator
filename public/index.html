@@ -10,26 +10,32 @@
     <link rel="stylesheet" href="stylesheets/common.css" type="text/css" media="screen" charset="utf-8" />
   </head>
   <body>
-    <div id="repo_info">
-      <div id="choose_repo" class="half">
-        GitHub Repo:
-        <input type="text" id="repo_url" value="user/repo" class="input_prompt" />
-        <span id="jubilate" class="button green medium">Jubilate</span>
-      </div>
-
-      <div class="half">
-        <div id="description"></div>
-        <div id="last_commit"></div>
-      </div>
+    <div class="quarter">
+      <div id="tree" ><ul></ul></div>
     </div>
 
-    <div id="tree" class="clearfix quarter"><ul></ul></div>
-    <div id="files" class="three_quarter">
-      <pre id="contents" class="prettyprint"></pre>
+    <div class="three_quarter">
+      <div id="repo_info">
+        <div id="choose_repo" class="half">
+          GitHub Repo:
+          <input type="text" id="repo_url" value="user/repo" class="input_prompt" />
+          <span id="jubilate" class="button green medium">Jubilate</span>
+        </div>
+
+        <div class="half">
+          <div id="description"></div>
+          <div id="last_commit"></div>
+        </div>
+      </div>
+
+      <div id="files" class="clearfix">
+        <pre id="contents" class="prettyprint"></pre>
+      </div>
     </div>
 
     <script src="javascripts/jquery-1.3.2.min.js"></script>
     <script src="javascripts/sammy.js"></script>
+    <script src="javascripts/sammy.cache.js"></script>
     <script src="javascripts/mustache.js"></script>
     <script src="javascripts/prettify.js"></script>
     <script src="javascripts/app/github.js"></script>

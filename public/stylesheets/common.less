@@ -2,8 +2,12 @@
 @green: #8ea401; 
 
 .rounded_corners {
-  -moz-border-radius: 6px;
-  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px;
+}
+
+.rounded_corners_left {
+  -moz-border-radius-topleft: 6px; -moz-border-radius-bottomleft: 6px;
+  -webkit-border-top-right-radius: 6px; -webkit-border-bottom-right-radius: 6px;
 }
 
 .button {
@@ -48,6 +52,21 @@
 /* repo stuff */
 #repo_info {
   padding: 1em;
+}
+
+#tree {
+  .rounded_corners_left;
+  border: 3px solid #ccc;
+  ul {
+    margin: 0; padding: 0;
+    li {
+      list-style: none inside; //url();
+      margin: 0; padding: 0 0 0 1em;
+    }
+    li.tree {
+      list-style: square inside;
+    }
+  }
 }
 
 #files {

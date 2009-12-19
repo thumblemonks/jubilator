@@ -1,10 +1,18 @@
 .rounded_corners {
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
+  border-radius: 6px;
+}
+.rounded_corners_left {
+  -moz-border-radius-topleft: 6px;
+  -moz-border-radius-bottomleft: 6px;
+  -webkit-border-top-right-radius: 6px;
+  -webkit-border-bottom-right-radius: 6px;
 }
 .button {
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
+  border-radius: 6px;
   display: inline-block;
   padding: 0.7ex 1ex;
   color: #ffffff;
@@ -43,4 +51,21 @@
   float: left;
 }
 #repo_info { padding: 1em; }
+#tree {
+  -moz-border-radius-topleft: 6px;
+  -moz-border-radius-bottomleft: 6px;
+  -webkit-border-top-right-radius: 6px;
+  -webkit-border-bottom-right-radius: 6px;
+  border: 3px solid #cccccc;
+}
+#tree ul {
+  margin: 0;
+  padding: 0;
+}
+#tree ul li {
+  list-style: none inside;
+  margin: 0;
+  padding: 0 0 0 1em;
+}
+#tree ul li.tree { list-style: square inside; }
 #files #contents { padding: 1em; }

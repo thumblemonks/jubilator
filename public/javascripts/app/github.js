@@ -6,6 +6,10 @@
   }
 
   GitHub.prototype = $.extend({}, {
+    same: function(user, repo) {
+      return (this.user == user && this.repo == repo);
+    },
+
     _github: function(path, callback) {
       path = Mustache.to_html(path, this); // :)
       $.getJSON("http://github.com/api/v2/json/" + path + "?callback=?", callback);
@@ -29,9 +33,8 @@
 
     // Blobs
     
-    open: function(sha_path, callback) {
-      console.log(arguments);
-      this._github("blob/show/{{user}}/{{repo}}/" + sha_path, callback);
+    open: function(sha, path, callback) {
+      this._github("blob/show/{{user}}/{{repo}}/" + sha + "/" + path, callback);
     }
   })
 

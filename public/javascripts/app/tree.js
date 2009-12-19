@@ -7,14 +7,15 @@ Jubilator.TreeView = function(project, sha, root) {
 };
 
 Jubilator.TreeView.prototype = $.extend({}, {
-  _blob_template: "<li class='leaf' id='{{sha}}'><a href='#/blob/{{tree_sha}}/{{path}}'>{{name}}</a></li>",
-  _tree_template: "<li class='leaf' id='{{sha}}'><a href='#/tree/{{sha}}'>{{name}}</a><ul></ul></li>",
+  _blob_template: "<li class='leaf' id='{{sha}}'><a href='#/{{user}}/{{repo}}/blob/{{tree_sha}}/{{path}}'>{{name}}</a></li>",
+  _tree_template: "<li class='tree' id='{{sha}}'><a href='#/{{user}}/{{repo}}/tree/{{sha}}'>{{name}}</a><ul></ul></li>",
 
   render: function(to_element) {
     var that = this;
     $(that.root).each(function(i) {
       var leaf = this;
       var view = {
+        user: that.project.user, repo: that.project.repo,
         name: leaf.name, path: leaf.name, tree_sha: that.tree_sha, sha: leaf.sha
       }
       if (leaf.type == "blob") {
