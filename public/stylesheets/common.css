@@ -51,13 +51,7 @@
   float: left;
 }
 #repo_info { padding: 1em; }
-#tree {
-  -moz-border-radius-topleft: 6px;
-  -moz-border-radius-bottomleft: 6px;
-  -webkit-border-top-right-radius: 6px;
-  -webkit-border-bottom-right-radius: 6px;
-  border: 3px solid #cccccc;
-}
+#repo_info form { display: inline; }
 #tree ul {
   margin: 0;
   padding: 0;

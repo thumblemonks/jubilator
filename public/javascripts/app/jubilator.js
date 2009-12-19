@@ -85,8 +85,9 @@ $.input_prompt = function(inputElement) {
 $(document).ready(function() {
   $("input.input_prompt, textarea.input_prompt").each(function(i) { $.input_prompt($(this)); })
 
-  $("#jubilate").click(function() {
+  $("#jubilate").submit(function() {
     window.location = "#/" + $("#repo_url").val();
+    return false;
   });
 
   app.run(); // Sammy!
