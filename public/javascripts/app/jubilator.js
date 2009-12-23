@@ -103,5 +103,4 @@ $(document).ready(function() {
 
   app.run(); // Sammy!
   // $("#tabs").tabs();
-  $("#tree > ul").treeview();
 });

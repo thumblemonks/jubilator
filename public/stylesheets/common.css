@@ -145,6 +145,7 @@ input {
   margin: 0;
 }
 #content_view #files #contents {
+  font: 13px/1.5 Inconsolata, Monaco, Courier, fixed;
   border: 0;
   margin: 0;
   padding: 0;

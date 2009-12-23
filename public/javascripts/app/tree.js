@@ -24,6 +24,5 @@ Jubilator.TreeView.prototype = $.extend({}, {
         to_element.append(Mustache.to_html(that._tree_template, view));
       }
     });
-    to_element.treeview();
   }
 });
