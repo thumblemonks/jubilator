@@ -1,57 +1,120 @@
+.auto { width: auto; }
+.left {
+  float: left;
+  text-align: left;
+}
+.right {
+  float: right;
+  text-align: right;
+}
+.clearfix { clear: both; }
+.half {
+  width: 50%;
+  float: left;
+  text-align: left;
+}
+.quarter {
+  width: 25%;
+  float: left;
+  text-align: left;
+}
+.three_quarter {
+  width: 75%;
+  float: left;
+  text-align: left;
+}
 .rounded_corners {
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
   border-radius: 6px;
 }
-.rounded_corners_left {
+.rounded_tight {
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+}
+.rounded_left {
   -moz-border-radius-topleft: 6px;
   -moz-border-radius-bottomleft: 6px;
+  -webkit-border-top-left-radius: 6px;
+  -webkit-border-bottom-left-radius: 6px;
+}
+.rounded_right {
+  -moz-border-radius-topright: 6px;
+  -moz-border-radius-bottomright: 6px;
   -webkit-border-top-right-radius: 6px;
   -webkit-border-bottom-right-radius: 6px;
 }
+.rounded_bottom {
+  -moz-border-radius-bottomleft: 6px;
+  -moz-border-radius-bottomright: 6px;
+  -webkit-border-bottom-left-radius: 6px;
+  -webkit-border-bottom-right-radius: 6px;
+}
+.offset_shadow {
+  -webkit-box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.25);
+}
+input {
+  font: 13px/1.5 'Helvetica Neue', Arial, 'Liberation Sans', FreeSans, sans-serif;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+}
 .button {
-  -moz-border-radius: 6px;
-  -webkit-border-radius: 6px;
-  border-radius: 6px;
   display: inline-block;
-  padding: 0.7ex 1ex;
   color: #ffffff;
   text-decoration: none;
   font-weight: bold;
-  line-height: 1;
-  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-  text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.25);
+  text-shadow: 1px 1px 1px #333333;
+  -moz-box-shadow: -1px 1px 2px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: -1px 1px 2px rgba(0, 0, 0, 0.25);
   border: 1px solid;
-  border-color: rgba(0, 0, 0, 0.25) rgba(0, 0, 0, 0.25) rgba(0, 0, 0, 0.35);
-  position: relative;
+  border-color: rgba(255, 255, 255, 0.35) rgba(255, 255, 255, 0.35) rgba(0, 0, 0, 0.25) rgba(0, 0, 0, 0.25);
   cursor: pointer;
+  position: relative;
 }
 .button:active { top: 1px; }
 .button:hover { background-color: #666666; }
-.button .small { font-size: 85%; }
-.button .medium { font-size: 100%; }
-.button .large { font-size: 1110%; }
-.blue.button { background-color: #4499dd; }
-.blue.button:hover { background-color: #3388cc; }
-.green.button { background-color: #8ea401; }
-.green.button:hover { background-color: #7d9300; }
-.clearfix { clear: both; }
-.left { float: left; }
-.half {
-  width: 50%;
-  float: left;
+.button.small { font-size: 85%; }
+.button.medium { font-size: 100%; }
+.button.large { font-size: 110%; }
+.button.slate { background-color: #666666; }
+.button.slate:hover { background-color: #555555; }
+.button.blue { background-color: #4183c4; }
+.button.blue:hover { background-color: #3072b3; }
+#choose_repo {
+  font-weight: bold;
+  background-color: #d9d9d9;
+  border: 1px solid #aaaaaa;
+  padding: 1ex;
+  margin-right: 1em;
+  color: black;
+  text-shadow: 1px 1px 1px white;
+  -moz-border-radius-bottomleft: 6px;
+  -moz-border-radius-bottomright: 6px;
+  -webkit-border-bottom-left-radius: 6px;
+  -webkit-border-bottom-right-radius: 6px;
+  -webkit-box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.25);
 }
-.quarter {
-  width: 25%;
-  float: left;
+#choose_repo form { display: inline; }
+#choose_repo form input[type=text] {
+  padding: 0.5ex 1ex;
+  border: 1px solid #aaaaaa;
 }
-.three_quarter {
-  width: 75%;
-  float: left;
+#identity {
+  font-size: 125%;
+  padding: 0.5ex;
+  background-color: #4183c4;
+  border-bottom: 2px solid #2163a4;
 }
-#repo_info { padding: 1em; }
-#repo_info form { display: inline; }
+#identity #product {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: white;
+  text-shadow: 1px 1px 1px #333333;
+}
 #tree ul {
   margin: 0;
   padding: 0;

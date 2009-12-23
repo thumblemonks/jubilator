@@ -14,7 +14,9 @@
           project = this.app.cache("project", $.github(user, repo));
           this.reset();
 
-          project.show_repo(function(data) { $('#description').text(data.repository.description); });
+          project.show_repo(function(data) {
+            $('#description').text(data.repository.description);
+          });
 
           project.last_commit(function(data) {
             var tree_sha = data.tree;
@@ -41,6 +43,7 @@ var app = $.sammy(function() {
     var tree_sha = this.params["sha"]
     var path = this.params["path"]
     this.load_project(this.params["user"], this.params["repo"], function(project) {
+      $("#tabs").tabs("add", this.path, path);
       project.open(tree_sha, path, function(data) {
         $("#contents").html(Mustache.to_html("{{raw}}", {raw: data.blob.data}));
         prettyPrint();
@@ -91,4 +94,5 @@ $(document).ready(function() {
   });
 
   app.run(); // Sammy!
+  $("#tabs").tabs();
 });

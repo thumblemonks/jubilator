@@ -173,7 +173,7 @@
       app_function.apply(this, [this]);
     }
     if (this.debug) {
-      this.bindToAllEvents(function(e, data) {
+      this.g(function(e, data) {
         app.log(app.toString(), e.cleaned_type, data || {});
       });
     }
