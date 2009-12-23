@@ -1,4 +1,6 @@
-body {
+body, html {
+  height: 100%;
+  width: 100%;
   background-color: #edf2fb;
   overflow: hidden;
 }
@@ -128,7 +130,7 @@ input {
   -moz-box-shadow: -2px 0px 4px rgba(50, 50, 50, 0.25);
   -webkit-box-shadow: -2px 0px 4px rgba(50, 50, 50, 0.25);
 }
-#tree { padding: 1em 0 0 0; }
+#tree { padding: 1em 0 2em 0; }
 #tree ul {
   margin: 0;
   padding: 0;
@@ -139,7 +141,7 @@ input {
   padding: 0 0 0 1em;
 }
 #tree ul li.tree { list-style: square inside; }
-#view {
+#content_view {
   -moz-box-shadow: 1px 2px 4px rgba(50, 50, 50, 0.25);
   -webkit-box-shadow: 1px 2px 4px rgba(50, 50, 50, 0.25);
   background-color: white;
@@ -148,14 +150,27 @@ input {
   -webkit-border-bottom-left-radius: 6px;
   -webkit-border-bottom-right-radius: 6px;
 }
-#view #files {
+#content_view #files {
   padding: 0.5ex 1ex;
   margin: 0;
 }
-#view #files #contents {
-  max-height: 30em;
-  overflow: auto;
+#content_view #files #contents {
   border: 0;
   margin: 0;
   padding: 0;
+}
+#statusbar { background-color: #eeeeee; }
+.north, .south, .west, .east, .center { display: inline-block; }
+.west {
+  width: 10em;
+  height: 100%;
+  overflow: auto;
+}
+.center {
+  height: 100%;
+  overflow: auto;
+}
+.south {
+  height: 2em;
+  width: 100%;
 }

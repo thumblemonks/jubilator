@@ -86,6 +86,12 @@ $.input_prompt = function(inputElement) {
 };
 
 $(document).ready(function() {
+  function layout() { container.layout(); }
+  var container = $('body'); //, west = $('body .west');
+  // west.resizable({ handles: 'e', stop: layout, helper: 'ui-resizable-helper-west', minWidth: 100 });
+  layout();
+  $(window).resize(layout);
+
   $("input.input_prompt, textarea.input_prompt").each(function(i) { $.input_prompt($(this)); })
 
   $("#jubilate").submit(function() {

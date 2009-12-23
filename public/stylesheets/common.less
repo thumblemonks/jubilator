@@ -4,7 +4,7 @@
 @darkblue: #2163a4;
 @slate: #666;
 
-body { background-color: #edf2fb; overflow: hidden; }
+body, html { height: 100%; width: 100%; background-color: #edf2fb; overflow: hidden; }
 
 /* positioning */
 .auto { width: auto; }
@@ -73,7 +73,6 @@ input { font: @font_base; .rounded_tight; }
 .button.blue { background-color: @blue;
   :hover { background-color: @blue - #111; } }
 
-
 #choose_repo {
   font-weight: bold;
   background-color: #d9d9d9; border: 1px solid #aaa;
@@ -105,7 +104,8 @@ input { font: @font_base; .rounded_tight; }
 }
 
 #tree {
-  padding: 1em 0 0 0;
+/*  overflow: auto;*/
+  padding: 1em 0 2em 0;
   ul {
     margin: 0; padding: 0;
     li {
@@ -118,7 +118,7 @@ input { font: @font_base; .rounded_tight; }
   }
 }
 
-#view {
+#content_view {
   -moz-box-shadow: 1px 2px 4px rgba(50,50,50,0.25);
   -webkit-box-shadow: 1px 2px 4px rgba(50,50,50,0.25);
   background-color: white;
@@ -127,11 +127,17 @@ input { font: @font_base; .rounded_tight; }
     padding: .5ex 1ex;
     margin: 0;
     #contents {
-      max-height: 30em;
-      overflow: auto;
+/*      overflow: auto;*/
       border: 0;
       margin: 0;
       padding: 0;
     }
   }
 }
+
+#statusbar { background-color: #eee;}
+
+.north, .south, .west, .east, .center { display: inline-block; }
+.west { width: 10em; height: 100%; overflow: auto; }
+.center { height: 100%; overflow: auto; }
+.south { height: 2em; width: 100%;}
