@@ -1,3 +1,4 @@
+body { background-color: #edf2fb; }
 .auto { width: auto; }
 .left {
   float: left;
@@ -102,6 +103,7 @@ input {
 #choose_repo form input[type=text] {
   padding: 0.5ex 1ex;
   border: 1px solid #aaaaaa;
+  width: 20em;
 }
 #identity {
   font-size: 125%;
@@ -115,6 +117,15 @@ input {
   color: white;
   text-shadow: 1px 1px 1px #333333;
 }
+#repo_info {
+  padding: 1em;
+  border: 3px solid white;
+  border-top: 0px;
+  background-color: #fffeef;
+  -moz-box-shadow: -2px 0px 4px rgba(50, 50, 50, 0.25);
+  -webkit-box-shadow: -2px 0px 4px rgba(50, 50, 50, 0.25);
+}
+#tree { padding: 1em 0 0 0; }
 #tree ul {
   margin: 0;
   padding: 0;
@@ -125,4 +136,16 @@ input {
   padding: 0 0 0 1em;
 }
 #tree ul li.tree { list-style: square inside; }
-#files #contents { padding: 1em; }
+#view {
+  -moz-box-shadow: 1px 2px 4px rgba(50, 50, 50, 0.25);
+  -webkit-box-shadow: 1px 2px 4px rgba(50, 50, 50, 0.25);
+  background-color: white;
+  -moz-border-radius-bottomleft: 6px;
+  -moz-border-radius-bottomright: 6px;
+  -webkit-border-bottom-left-radius: 6px;
+  -webkit-border-bottom-right-radius: 6px;
+}
+#view #files #contents {
+  border: 0;
+  padding: 1em;
+}

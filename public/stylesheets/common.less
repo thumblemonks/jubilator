@@ -4,6 +4,8 @@
 @darkblue: #2163a4;
 @slate: #666;
 
+body { background-color: #edf2fb; }
+
 /* positioning */
 .auto { width: auto; }
 .left { float: left; text-align: left; }
@@ -82,7 +84,7 @@ input { font: @font_base; .rounded_tight; }
   .offset_shadow;
   form {
     display: inline;
-    input[type=text] { padding: .5ex 1ex; border: 1px solid #aaa; }
+    input[type=text] { padding: .5ex 1ex; border: 1px solid #aaa; width: 20em;}
   }
 }
 
@@ -95,10 +97,15 @@ input { font: @font_base; .rounded_tight; }
 }
 
 #repo_info {
-  
+  padding: 1em;
+  border: 3px solid white; border-top: 0px;
+  background-color: #fffeef;
+  -moz-box-shadow: -2px 0px 4px rgba(50,50,50,0.25);
+  -webkit-box-shadow: -2px 0px 4px rgba(50,50,50,0.25);
 }
 
 #tree {
+  padding: 1em 0 0 0;
   ul {
     margin: 0; padding: 0;
     li {
@@ -111,8 +118,15 @@ input { font: @font_base; .rounded_tight; }
   }
 }
 
-#files {
-  #contents {
-    padding: 1em;
+#view { 
+  -moz-box-shadow: 1px 2px 4px rgba(50,50,50,0.25);
+  -webkit-box-shadow: 1px 2px 4px rgba(50,50,50,0.25);
+  background-color: white;
+  .rounded_bottom;
+  #files {
+    #contents {
+      border: 0;
+      padding: 1em;
+    }
   }
 }
