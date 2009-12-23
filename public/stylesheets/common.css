@@ -1,4 +1,7 @@
-body { background-color: #edf2fb; }
+body {
+  background-color: #edf2fb;
+  overflow: hidden;
+}
 .auto { width: auto; }
 .left {
   float: left;
@@ -145,7 +148,14 @@ input {
   -webkit-border-bottom-left-radius: 6px;
   -webkit-border-bottom-right-radius: 6px;
 }
+#view #files {
+  padding: 0.5ex 1ex;
+  margin: 0;
+}
 #view #files #contents {
+  max-height: 30em;
+  overflow: auto;
   border: 0;
-  padding: 1em;
+  margin: 0;
+  padding: 0;
 }

@@ -4,7 +4,7 @@
 @darkblue: #2163a4;
 @slate: #666;
 
-body { background-color: #edf2fb; }
+body { background-color: #edf2fb; overflow: hidden; }
 
 /* positioning */
 .auto { width: auto; }
@@ -118,15 +118,20 @@ input { font: @font_base; .rounded_tight; }
   }
 }
 
-#view { 
+#view {
   -moz-box-shadow: 1px 2px 4px rgba(50,50,50,0.25);
   -webkit-box-shadow: 1px 2px 4px rgba(50,50,50,0.25);
   background-color: white;
   .rounded_bottom;
   #files {
+    padding: .5ex 1ex;
+    margin: 0;
     #contents {
+      max-height: 30em;
+      overflow: auto;
       border: 0;
-      padding: 1em;
+      margin: 0;
+      padding: 0;
     }
   }
 }
