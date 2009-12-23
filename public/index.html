@@ -8,42 +8,43 @@
     <link rel="stylesheet" href="/stylesheets/text.css" type="text/css" media="screen" charset="utf-8" />
     <link rel="stylesheet" href="/stylesheets/prettify.css" type="text/css" media="screen" charset="utf-8" />
     <link rel="stylesheet" href="/stylesheets/common.css" type="text/css" media="screen" charset="utf-8" />
+    <link rel="stylesheet" href="/stylesheets/jquery.treeview.css" type="text/css" media="screen" charset="utf-8" />
   </head>
-  <body class="{layout: {type: 'border', resize: false, hgap: 6}}">
-      <div class="north">
-        <div id="choose_repo" class="auto right">
-          GitHub Repository:
-          <form id="jubilate">
-          <input type="text" id="repo_url" value="user/repo" class="input_prompt" />
-          <input type="submit" class="button slate medium" value="Open" />
-        </div>
-
-        <div id="identity">
-          <span id="product">Jubilator</span>
-        </div>
-
-        <div id="repo_info">
-          <div id="description"></div>
-          <div id="last_commit"></div>
-        </div>
+  <body class="{layout: {type: 'border', resize: false, hgap: 0}}">
+    <div class="north">
+      <div id="choose_repo" class="auto right">
+        GitHub Repository:
+        <form id="jubilate">
+        <input type="text" id="repo_url" value="user/repo" class="input_prompt" />
+        <input type="submit" class="button slate medium" value="Open" />
       </div>
 
-      <div class="west">
-        <div id="tree" ><ul></ul></div>
+      <div id="identity">
+        <span id="product">Jubilator</span>
       </div>
 
-      <div class="center">
-        <div id="content_view">
-          <!--div id="tabs"><ul></ul></div-->
-          <div id="files" class="clearfix">
-            <pre id="contents" class="prettyprint"></pre>
-          </div>
+      <div id="repo_info">
+        <div id="description"></div>
+        <div id="last_commit"></div>
+      </div>
+    </div>
+
+    <div class="center">
+      <div id="content_view">
+        <!--div id="tabs"><ul></ul></div-->
+        <div id="files" class="clearfix">
+          <pre id="contents" class="prettyprint"></pre>
         </div>
       </div>
+    </div>
 
-      <div id="statusbar" class="clearfix south">
-        statusbar
-      </div>
+    <div class="west">
+      <div id="tree" ><ul></ul></div>
+    </div>
+
+    <div id="statusbar" class="south">
+      statusbar
+    </div>
 
     <script src="/javascripts/jquery-1.3.2.min.js"></script>
     <script src="/javascripts/jquery-ui-1.7.2.custom.min.js"></script>
@@ -51,6 +52,7 @@
     <script src="/javascripts/jquery.sizes.js"></script>
     <script src="/javascripts/jlayout.border.js"></script>
     <script src="/javascripts/jquery.jlayout.js"></script>
+    <script src="/javascripts/jquery.treeview.js"></script>
     <script src="/javascripts/sammy.js"></script>
     <script src="/javascripts/sammy.cache.js"></script>
     <script src="/javascripts/mustache.js"></script>

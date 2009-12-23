@@ -86,9 +86,11 @@ $.input_prompt = function(inputElement) {
 };
 
 $(document).ready(function() {
-  function layout() { container.layout(); }
-  var container = $('body'); //, west = $('body .west');
-  // west.resizable({ handles: 'e', stop: layout, helper: 'ui-resizable-helper-west', minWidth: 100 });
+  var container = $('body'), west = $('body .west'), center = $('body .center');
+  function layout() {
+    container.layout();
+  }
+  // west.resizable({ handles: 'e', helper: 'ui-resizable-helper-west', minWidth: 100 });
   layout();
   $(window).resize(layout);
 
@@ -101,4 +103,5 @@ $(document).ready(function() {
 
   app.run(); // Sammy!
   // $("#tabs").tabs();
+  $("#tree > ul").treeview();
 });
