@@ -111,18 +111,19 @@ input {
   padding: 0.5ex;
   background-color: #4183c4;
   border-bottom: 2px solid #2163a4;
+  color: white;
+  text-shadow: 1px 1px 1px #333333;
 }
 #identity #product {
   text-transform: uppercase;
   font-weight: bold;
-  color: white;
-  text-shadow: 1px 1px 1px #333333;
 }
 #identity #product a {
   color: white;
   text-decoration: none;
 }
 #identity #product a:visited { color: white; }
+#identity .alpha { font-size: 60%; }
 #repo_info {
   padding: 1em;
   border: 3px solid white;

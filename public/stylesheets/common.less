@@ -93,14 +93,16 @@ input { font: @font_base; .rounded_tight; }
 #identity {
   font-size: 125%; padding: .5ex;
   background-color: @blue; border-bottom: 2px solid @darkblue;
+  color: white; .shadow_text;
   #product {
-    text-transform: uppercase; font-weight: bold; color: white; .shadow_text;
+    text-transform: uppercase; font-weight: bold;
     a {
       color: white;
       text-decoration: none;
       :visited { color: white; }
     }
   }
+  .alpha { font-size: 60%;}
 }
 
 #repo_info {
