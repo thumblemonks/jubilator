@@ -40,30 +40,12 @@ var app = $.sammy(function() {
   this.use(Sammy.Jubilator);
 
   this.get("#/:user/:repo/blob/:sha/:path", function() {
-    var req = this;
-    var tree_sha = req.params["sha"]
-    var path = req.params["path"]
+    var tree_sha = this.params["sha"]
+    var path = this.params["path"]
     this.load_project(this.params["user"], this.params["repo"], function(project) {
-      // FIXME: This is currently a big load of spike crap!
-      $("#tabs li.selected").removeClass("selected")
-      var tab = $("#tabs li[data-sha='" + req.path + "']");
-      if (tab.length > 0) {
-        $("#contents").html(tab.data("html"));
-        tab.addClass("selected");
-        prettyPrint();
-      } else {
-        project.open_blob(tree_sha, path, function(data) {
-          var raw_html = Mustache.to_html("{{raw}}", {raw: data.blob.data})
-          tab = $("<li>");
-          tab.attr("data-sha", req.path).data("html", raw_html).text(path).click(function() {
-            window.location = req.path;
-          });
-          $("#tabs > ul").append(tab);
-          $("#contents").html(raw_html);
-          tab.addClass("selected");
-          prettyPrint();
-        });
-      }
+      project.open_blob(tree_sha, path, function(blob) {
+        new Jubilator.Tab(project, tree_sha).render(blob.blob);
+      });
     });
   });
 
