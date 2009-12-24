@@ -117,6 +117,7 @@ $(document).ready(function() {
   }
   $("#random_noun").text(random_noun()).click(function() { $(this).text(random_noun()); });
 
+  $("#view").layout();
   var container = $('body'), west = $('body .west'), center = $('body .center');
   function layout() {
     container.layout();

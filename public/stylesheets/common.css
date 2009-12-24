@@ -168,6 +168,9 @@ input {
   border-top: 1px dotted #cccccc;
   border-bottom: 1px solid #cccccc;
   padding: 0.5ex;
+  font-size: 85%;
+  width: 100%;
+  min-height: 2.25em;
 }
 #tabs ul {
   margin: 0;
@@ -178,7 +181,6 @@ input {
   display: inline-block;
   padding: 0.5ex 1ex;
   margin: 0;
-  font-size: 85%;
   cursor: pointer;
 }
 #tabs ul li.selected {
@@ -194,12 +196,10 @@ input {
   height: 100%;
   overflow: auto;
   background-color: white;
-}
-#content_view #files {
   padding: 0.5ex 1ex;
   margin: 0;
 }
-#content_view #files #contents {
+#content_view #contents {
   font: 13px/1.5 Inconsolata, Monaco, Courier, fixed;
   border: 0;
   margin: 0;
