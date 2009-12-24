@@ -127,12 +127,17 @@ input {
   text-decoration: none;
 }
 #identity a:visited { color: white; }
+#identity .alpha { font-size: 75%; }
 #identity #product {
   font-size: 125%;
   text-transform: uppercase;
   font-weight: bold;
 }
-#identity .alpha { font-size: 75%; }
+#identity #bookmarklet {
+  padding: 0 1em;
+  margin-top: 0.75ex;
+}
+#identity #bookmarklet a { color: #00ffee; }
 #repo_info {
   padding: 1em;
   border: 3px solid white;
