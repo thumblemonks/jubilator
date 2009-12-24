@@ -33,7 +33,7 @@
 
     // Blobs
     
-    open: function(sha, path, callback) {
+    open_blob: function(sha, path, callback) {
       this._github("blob/show/{{user}}/{{repo}}/" + sha + "/" + path, callback);
     }
   })

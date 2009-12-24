@@ -1,11 +1,12 @@
 @font_base: 13px/1.5 'Helvetica Neue',Arial,'Liberation Sans',FreeSans,sans-serif;
 @font_text: 13px/1.5 Inconsolata,Monaco,Courier,fixed;
 
+@lightblue: #edf2fb;
 @blue: #4183c4;
 @darkblue: #2163a4;
 @slate: #666;
 
-body, html { height: 100%; width: 100%; background-color: #edf2fb; overflow: hidden; }
+body, html { height: 100%; width: 100%; background-color: @lightblue; overflow: hidden; }
 
 /* positioning */
 .align_right { text-align: right; }
@@ -48,7 +49,13 @@ body, html { height: 100%; width: 100%; background-color: #edf2fb; overflow: hid
   -moz-box-shadow: 0px 2px 3px rgba(0,0,0,0.25);
 }
 
+.boxy_shadow {
+  -moz-box-shadow: -2px 2px 2px rgba(75,75,75,0.35);
+  -webkit-box-shadow: -2px 2px 2px rgba(75,75,75,0.35);
+}
+
 .shadow_text { text-shadow: 1px 1px 1px #333; }
+.shadow_text_tight { text-shadow: 1px 1px 1px rgba(0, 0, 0, .5); }
 
 /*=formy stuff*/
 
@@ -107,8 +114,7 @@ input { font: @font_base; .rounded_tight; }
   padding: 1em;
   border: 3px solid white; border-top: 0px;
   background-color: #fffeef;
-  -moz-box-shadow: -2px 0px 4px rgba(50,50,50,0.25);
-  -webkit-box-shadow: -2px 0px 4px rgba(50,50,50,0.25);
+  .boxy_shadow;
 
   #description { font-weight: bold; }
   #last_commit { font-style: italic; color: #444; }
@@ -129,13 +135,34 @@ input { font: @font_base; .rounded_tight; }
     li.tree.opened {
       list-style-image: url('/images/github-arrow-opened.png');
     }
-    li.tree > .name { text-shadow: 1px 1px 1px rgba(0, 0, 0, .5); }
+    li.tree > .name { .shadow_text_tight; }
+  }
+}
+
+#tabs {
+  .boxy_shadow;
+  background-color: #eee;
+  border-top: 1px dotted #ccc;
+  border-bottom: 1px solid #ccc;
+  padding: .5ex;
+  ul {
+    margin: 0; padding: 0; list-style-type: none;
+    li {
+      display: inline-block;
+      padding: .5ex 1ex; margin: 0;
+      font-size: 85%;
+    }
+    li.selected {
+      .rounded_tight;
+      text-shadow: 0 0 0 transparent;
+      background-color: @lightblue;
+      border: 1px solid #ccc;
+    }
   }
 }
 
 #content_view {
-  -moz-box-shadow: 0px 2px 4px rgba(50,50,50,0.25);
-  -webkit-box-shadow: 0px 2px 4px rgba(50,50,50,0.25);
+  .boxy_shadow;
   height: 100%;
   overflow:auto;
   background-color: white;
