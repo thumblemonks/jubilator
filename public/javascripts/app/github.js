@@ -12,7 +12,9 @@
 
     _github: function(path, callback) {
       path = Mustache.to_html(path, this); // :)
-      $.getJSON("http://github.com/api/v2/json/" + path + "?callback=?", callback);
+      var url = "http://github.com/api/v2/json/" + path
+      console.log("GitHub: " + url);
+      $.getJSON(url + "?callback=?", callback);
     },
 
     // Repos API

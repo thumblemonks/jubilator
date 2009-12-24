@@ -44,6 +44,7 @@ var app = $.sammy(function() {
     var tree_sha = req.params["sha"]
     var path = req.params["path"]
     this.load_project(this.params["user"], this.params["repo"], function(project) {
+      // FIXME: This is currently a big load of spike crap!
       $("#tabs li.selected").removeClass("selected")
       var tab = $("#tabs li[data-sha='" + req.path + "']");
       if (tab.length > 0) {
