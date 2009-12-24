@@ -86,14 +86,6 @@ $.input_prompt = function(inputElement) {
 };
 
 $(document).ready(function() {
-  var container = $('body'), west = $('body .west'), center = $('body .center');
-  function layout() {
-    container.layout();
-  }
-  // west.resizable({ handles: 'e', helper: 'ui-resizable-helper-west', minWidth: 100 });
-  layout();
-  $(window).resize(layout);
-
   $("input.input_prompt, textarea.input_prompt").each(function(i) { $.input_prompt($(this)); })
 
   $("#jubilate").submit(function() {
@@ -108,6 +100,14 @@ $(document).ready(function() {
     ][Math.floor(Math.random() * 100 % 10)];
   }
   $("#random_noun").text(random_noun()).click(function() { $(this).text(random_noun()); });
+
+  var container = $('body'), west = $('body .west'), center = $('body .center');
+  function layout() {
+    container.layout();
+  }
+  // west.resizable({ handles: 'e', helper: 'ui-resizable-helper-west', minWidth: 100 });
+  layout();
+  $(window).resize(layout);
 
   app.run(); // Sammy!
   // $("#tabs").tabs();

@@ -85,24 +85,22 @@ input { font: @font_base; .rounded_tight; }
   .rounded_bottom;
   .offset_shadow;
   form {
+    margin: 0; padding: 0;
     display: inline;
     input[type=text] { padding: .5ex 1ex; border: 1px solid #aaa; width: 20em;}
   }
 }
 
 #identity {
-  font-size: 125%; padding: .5ex;
+  padding: 0.5ex;
   background-color: @blue; border-bottom: 2px solid @darkblue;
   color: white; .shadow_text;
-  #product {
-    text-transform: uppercase; font-weight: bold;
-    a {
-      color: white;
-      text-decoration: none;
-      :visited { color: white; }
-    }
+  a {
+    color: white; text-decoration: none;
+    :visited { color: white; }
   }
-  .alpha { font-size: 60%;}
+  #product { font-size: 125%; text-transform: uppercase; font-weight: bold; }
+  .alpha { font-size: 75%; }
 }
 
 #repo_info {
@@ -117,7 +115,6 @@ input { font: @font_base; .rounded_tight; }
 }
 
 #tree {
-  padding: 1em 0;
   ul {
     margin: 0; padding: 0;
     li {
@@ -170,6 +167,7 @@ input { font: @font_base; .rounded_tight; }
 }
 
 .north, .south, .west, .east, .center { display: inline-block; }
+.north { width: 100%; }
 .west { width: 20em; height: 100%; overflow: auto; }
 .center {  }
 .south { width: 100%;}
