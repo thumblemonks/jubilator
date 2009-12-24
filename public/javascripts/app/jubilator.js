@@ -20,7 +20,7 @@
 
           project.last_commit(function(data) {
             var tree_sha = data.tree;
-            $('#last_commit').text(tree_sha);
+            $('#last_commit').text(data.message);
             project.tree(tree_sha, function(tree_data) {
               var root_tree = $("#tree > ul");
               root_tree.text("");
@@ -100,6 +100,14 @@ $(document).ready(function() {
     window.location = "#/" + $("#repo_url").val();
     return false;
   });
+
+  var random_noun = function() {
+    return [
+      "h4x0rz", "drama queens", "monks", "cheerios", "animal crackers", "heretics", "heroes",
+      "space ghosts", "javascript engines"
+    ][Math.floor(Math.random() * 100 % 10)];
+  }
+  $("#random_noun").text(random_noun()).click(function() { $(this).text(random_noun()); });
 
   app.run(); // Sammy!
   // $("#tabs").tabs();

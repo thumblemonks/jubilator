@@ -8,9 +8,10 @@
 body, html { height: 100%; width: 100%; background-color: #edf2fb; overflow: hidden; }
 
 /* positioning */
+.align_right { text-align: right; }
 .auto { width: auto; }
-.left { float: left; text-align: left; }
-.right { float: right; text-align: right; }
+.left { float: left; }
+.right { float: right; .align_right; }
 .clearfix { clear: both; }
 
 /* block sizes */
@@ -47,14 +48,15 @@ body, html { height: 100%; width: 100%; background-color: #edf2fb; overflow: hid
   -moz-box-shadow: 0px 2px 3px rgba(0,0,0,0.25);
 }
 
+.shadow_text { text-shadow: 1px 1px 1px #333; }
+
 /*=formy stuff*/
 
 input { font: @font_base; .rounded_tight; }
 
 .button {
   display: inline-block;
-  color: #fff; text-decoration: none; font-weight: bold;
-  text-shadow: 1px 1px 1px #333;
+  color: #fff; text-decoration: none; font-weight: bold; .shadow_text;
   -moz-box-shadow: -1px 1px 2px rgba(0,0,0,0.25);
   -webkit-box-shadow: -1px 1px 2px rgba(0,0,0,0.25);
   border: 1px solid;
@@ -92,7 +94,12 @@ input { font: @font_base; .rounded_tight; }
   font-size: 125%; padding: .5ex;
   background-color: @blue; border-bottom: 2px solid @darkblue;
   #product {
-    text-transform: uppercase; font-weight: bold; color: white; text-shadow: 1px 1px 1px #333;
+    text-transform: uppercase; font-weight: bold; color: white; .shadow_text;
+    a {
+      color: white;
+      text-decoration: none;
+      :visited { color: white; }
+    }
   }
 }
 
@@ -102,6 +109,9 @@ input { font: @font_base; .rounded_tight; }
   background-color: #fffeef;
   -moz-box-shadow: -2px 0px 4px rgba(50,50,50,0.25);
   -webkit-box-shadow: -2px 0px 4px rgba(50,50,50,0.25);
+
+  #description { font-weight: bold; }
+  #last_commit { font-style: italic; color: #444; }
 }
 
 #tree {
@@ -120,14 +130,16 @@ input { font: @font_base; .rounded_tight; }
     li.tree.opened {
       list-style-image: url('/images/github-arrow-opened.png');
     }
+    li.tree > .name { text-shadow: 1px 1px 1px rgba(0, 0, 0, .5); }
   }
 }
 
 #content_view {
-  -moz-box-shadow: 1px 2px 4px rgba(50,50,50,0.25);
-  -webkit-box-shadow: 1px 2px 4px rgba(50,50,50,0.25);
+  -moz-box-shadow: 0px 2px 4px rgba(50,50,50,0.25);
+  -webkit-box-shadow: 0px 2px 4px rgba(50,50,50,0.25);
+  height: 100%;
+  overflow:auto;
   background-color: white;
-  .rounded_bottom;
   #files {
     padding: .5ex 1ex;
     margin: 0;
@@ -140,12 +152,25 @@ input { font: @font_base; .rounded_tight; }
   }
 }
 
-#statusbar { background-color: #eee;}
+#statusbar {
+  padding: 1ex 1ex .25ex 1ex;
+  background-color: #eee;
+  border-top: 1px solid #ccc;
+  font-size: 90%;
+  
+  #shameless {
+    color: #444;
+    span {
+      padding: 0 1ex;
+      em { cursor: pointer; text-decoration: underline; }
+    }
+  }
+}
 
 .north, .south, .west, .east, .center { display: inline-block; }
 .west { width: 20em; height: 100%; overflow: auto; }
-.center { height: 100%; overflow: auto; }
-.south { height: 2em; width: 100%;}
+.center {  }
+.south { width: 100%;}
 
 /*.ui-resizable-handle {
   background-color: #BBBBBB;

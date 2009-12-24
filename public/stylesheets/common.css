@@ -4,11 +4,9 @@ body, html {
   background-color: #edf2fb;
   overflow: hidden;
 }
+.align_right { text-align: right; }
 .auto { width: auto; }
-.left {
-  float: left;
-  text-align: left;
-}
+.left { float: left; }
 .right {
   float: right;
   text-align: right;
@@ -17,17 +15,14 @@ body, html {
 .half {
   width: 50%;
   float: left;
-  text-align: left;
 }
 .quarter {
   width: 25%;
   float: left;
-  text-align: left;
 }
 .three_quarter {
   width: 75%;
   float: left;
-  text-align: left;
 }
 .rounded_corners {
   -moz-border-radius: 6px;
@@ -61,6 +56,7 @@ body, html {
   -webkit-box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.25);
   -moz-box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.25);
 }
+.shadow_text { text-shadow: 1px 1px 1px #333333; }
 input {
   font: 13px/1.5 'Helvetica Neue', Arial, 'Liberation Sans', FreeSans, sans-serif;
   -moz-border-radius: 4px;
@@ -122,6 +118,11 @@ input {
   color: white;
   text-shadow: 1px 1px 1px #333333;
 }
+#identity #product a {
+  color: white;
+  text-decoration: none;
+}
+#identity #product a:visited { color: white; }
 #repo_info {
   padding: 1em;
   border: 3px solid white;
@@ -129,6 +130,11 @@ input {
   background-color: #fffeef;
   -moz-box-shadow: -2px 0px 4px rgba(50, 50, 50, 0.25);
   -webkit-box-shadow: -2px 0px 4px rgba(50, 50, 50, 0.25);
+}
+#repo_info #description { font-weight: bold; }
+#repo_info #last_commit {
+  font-style: italic;
+  color: #444444;
 }
 #tree { padding: 1em 0; }
 #tree ul {
@@ -146,14 +152,13 @@ input {
   list-style-image: url('/images/github-arrow-closed.png');
 }
 #tree ul li.tree.opened { list-style-image: url('/images/github-arrow-opened.png'); }
+#tree ul li.tree > .name { text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5); }
 #content_view {
-  -moz-box-shadow: 1px 2px 4px rgba(50, 50, 50, 0.25);
-  -webkit-box-shadow: 1px 2px 4px rgba(50, 50, 50, 0.25);
+  -moz-box-shadow: 0px 2px 4px rgba(50, 50, 50, 0.25);
+  -webkit-box-shadow: 0px 2px 4px rgba(50, 50, 50, 0.25);
+  height: 100%;
+  overflow: auto;
   background-color: white;
-  -moz-border-radius-bottomleft: 6px;
-  -moz-border-radius-bottomright: 6px;
-  -webkit-border-bottom-left-radius: 6px;
-  -webkit-border-bottom-right-radius: 6px;
 }
 #content_view #files {
   padding: 0.5ex 1ex;
@@ -165,18 +170,22 @@ input {
   margin: 0;
   padding: 0;
 }
-#statusbar { background-color: #eeeeee; }
+#statusbar {
+  padding: 1ex 1ex 0.25ex 1ex;
+  background-color: #eeeeee;
+  border-top: 1px solid #cccccc;
+  font-size: 90%;
+}
+#statusbar #shameless { color: #444444; }
+#statusbar #shameless span { padding: 0 1ex; }
+#statusbar #shameless span em {
+  cursor: pointer;
+  text-decoration: underline;
+}
 .north, .south, .west, .east, .center { display: inline-block; }
 .west {
   width: 20em;
   height: 100%;
   overflow: auto;
 }
-.center {
-  height: 100%;
-  overflow: auto;
-}
-.south {
-  height: 2em;
-  width: 100%;
-}
+.south { width: 100%; }
