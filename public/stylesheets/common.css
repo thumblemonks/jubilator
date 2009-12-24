@@ -184,7 +184,7 @@ input {
   cursor: pointer;
 }
 #tabs ul li .close {
-  padding: 1ex 1ex 1ex 0;
+  padding: 1ex;
   margin: 0;
   color: #888888;
   font-weight: bold;
