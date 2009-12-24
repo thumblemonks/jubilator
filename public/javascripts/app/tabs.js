@@ -15,6 +15,15 @@ Jubilator.Tab.prototype = $.extend({}, {
       tab.addClass("selected");
       prettyPrint();
     });
+
+    tab.append($("<span>").attr("class", "close").text("x").click(function() {
+      if (tab.hasClass("selected")) {
+        var neighbor = tab.siblings();
+        (neighbor.length > 0) ? $(neighbor[0]).click() : $("#contents").html("");
+      }
+      tab.remove();
+    }));
+
     $("#tabs > ul").append(tab);
     tab.click();
   }

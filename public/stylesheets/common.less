@@ -146,7 +146,14 @@ input { font: @font_base; .rounded_tight; }
   ul {
     margin: 0; padding: 0; list-style-type: none;
 
-    li { display: inline-block; padding: .5ex 1ex; margin: 0; cursor: pointer; }
+    li {
+      display: inline-block; padding: .5ex 0 .5ex 1ex; margin: 0; cursor: pointer;
+      
+      .close {
+        padding: 1ex 1ex 1ex 0; margin: 0; color: #888; font-weight: bold;
+        :hover { color: #c00; }
+      }
+    }
     li.selected { .rounded_tight; background-color: @lightblue; border: 1px solid #ccc; }
   }
 }
