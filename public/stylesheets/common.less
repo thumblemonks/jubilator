@@ -105,18 +105,22 @@ input { font: @font_base; .rounded_tight; }
 }
 
 #tree {
-/*  overflow: auto;*/
-  padding: 1em 0 2em 0;
-/*  ul {
+  padding: 1em 0;
+  ul {
     margin: 0; padding: 0;
     li {
-      list-style: none inside; //url();
+      cursor: pointer;
+      list-style: none inside;
       margin: 0; padding: 0 0 0 1em;
     }
     li.tree {
-      list-style: square inside;
+      list-style-position: inside;
+      list-style-image: url('/images/github-arrow-closed.png');
     }
-  }*/
+    li.tree.opened {
+      list-style-image: url('/images/github-arrow-opened.png');
+    }
+  }
 }
 
 #content_view {
@@ -128,7 +132,6 @@ input { font: @font_base; .rounded_tight; }
     padding: .5ex 1ex;
     margin: 0;
     #contents {
-/*      overflow: auto;*/
       font: @font_text;
       border: 0;
       margin: 0;
