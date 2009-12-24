@@ -135,7 +135,7 @@ input { font: @font_base; .rounded_tight; }
     li.tree.opened {
       list-style-image: url('/images/github-arrow-opened.png');
     }
-    li.tree > .name { .shadow_text_tight; }
+    li.tree > .name {  }
   }
 }
 
@@ -148,15 +148,11 @@ input { font: @font_base; .rounded_tight; }
   ul {
     margin: 0; padding: 0; list-style-type: none;
     li {
-      display: inline-block;
-      padding: .5ex 1ex; margin: 0;
-      font-size: 85%;
+      display: inline-block; padding: .5ex 1ex; margin: 0; font-size: 85%; cursor: pointer;
     }
     li.selected {
       .rounded_tight;
-      text-shadow: 0 0 0 transparent;
-      background-color: @lightblue;
-      border: 1px solid #ccc;
+      background-color: @lightblue; border: 1px solid #ccc;
     }
   }
 }

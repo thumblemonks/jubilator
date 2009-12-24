@@ -161,7 +161,6 @@ input {
   list-style-image: url('/images/github-arrow-closed.png');
 }
 #tree ul li.tree.opened { list-style-image: url('/images/github-arrow-opened.png'); }
-#tree ul li.tree > .name { text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5); }
 #tabs {
   -moz-box-shadow: -2px 2px 2px rgba(75, 75, 75, 0.35);
   -webkit-box-shadow: -2px 2px 2px rgba(75, 75, 75, 0.35);
@@ -180,12 +179,12 @@ input {
   padding: 0.5ex 1ex;
   margin: 0;
   font-size: 85%;
+  cursor: pointer;
 }
 #tabs ul li.selected {
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
   border-radius: 4px;
-  text-shadow: 0 0 0 transparent;
   background-color: #edf2fb;
   border: 1px solid #cccccc;
 }

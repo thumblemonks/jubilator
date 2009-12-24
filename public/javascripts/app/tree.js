@@ -8,6 +8,7 @@ Jubilator.TreeView = function(project, sha, root) {
 
 Jubilator.TreeView.prototype = $.extend({}, {
   _blob_template: "<li class='leaf' data-sha='{{sha}}' data-href='#/{{user}}/{{repo}}/blob/{{tree_sha}}/{{path}}'><div class='name'>{{name}}</div></li>",
+
   _tree_template: "<li class='tree' data-sha='{{sha}}' data-href='#/{{user}}/{{repo}}/tree/{{sha}}'><div class='name'>{{name}}</div><ul></ul></li>",
 
   make_blob: function(view) {

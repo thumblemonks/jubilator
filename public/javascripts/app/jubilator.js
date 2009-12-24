@@ -70,7 +70,7 @@ var app = $.sammy(function() {
     var tree_sha = this.params["sha"]
     this.load_project(this.params["user"], this.params["repo"], function(project) {
       project.tree(tree_sha, function(tree_data) {
-        var subtree = $("#" + tree_sha + " > ul");
+        var subtree = $("#tree li[data-sha='" + tree_sha + "'] > ul");
         subtree.text("");
         new Jubilator.TreeView(project, tree_sha, tree_data.tree).render(subtree);
       });
