@@ -1,6 +1,6 @@
 require 'rubygems'
 
-task "rackup" do
+task "rackme" do
   require 'rack'
   Rack::Handler::Thin.run(Rack::Builder.app {
     map("/") {
@@ -8,14 +8,6 @@ task "rackup" do
       use(Rack::Lint)
     }
   })
-end
-
-desc "Run less --watch on the .less files"
-task "less:watch" do
-  require 'less'
-  options = { :watch => true, :source => "public/stylesheets/common.less",
-    :compress => false, :debug => false, :growl => false, :timestamps => false, :color => STDOUT.tty? }
-  Less::Command.new( options ).run! ? exit(0) : exit(1)
 end
 
 begin
