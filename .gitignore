@@ -1,2 +1,3 @@
 .DS_Store
 production.rb
+public/javascripts/tracking.js

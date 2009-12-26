@@ -12,13 +12,14 @@ require "#{to}"
 # Routine tasks
 
 namespace :deploy do
-  # remote_task :symlink_configs, :roles => :app do
-  #   run "ln -nfs #{shared_path}/something #{latest_release}/something"
-  # end
+  remote_task :symlink_configs, :roles => :app do
+    tracking_path = "public/javascripts/tracking.js"
+    run "ln -nfs #{shared_path}/#{tracking_path} #{latest_release}/#{tracking_path}"
+  end
 end
 
 remote_task 'vlad:update_symlinks', :roles => :app do
-  # Rake::Task['deploy:symlink_configs'].invoke
+  Rake::Task['deploy:symlink_configs'].invoke
 end
 
 desc "Deploys the latest set of code (use this most often)"
