@@ -10,10 +10,14 @@
       return (this.user == user && this.repo == repo);
     },
 
+    _log: function(msg) {
+      if (typeof console != 'undefined') { console.log(msg); }
+    },
+
     _github: function(path, callback) {
       path = Mustache.to_html(path, this); // :)
       var url = "http://github.com/api/v2/json/" + path
-      console.log("GitHub: " + url);
+      this._log("GitHub: " + url);
       $.getJSON(url + "?callback=?", callback);
     },
 
